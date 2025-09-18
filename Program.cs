@@ -36,16 +36,19 @@ namespace NumbersGame
                 {
                     Console.WriteLine("Wohoo! Du gjorde det!");
                     isCorrectGuess = true;//Bool becomes true.
+                    Console.WriteLine("Du vann!");
                 }
 
                 if (guesses == 5 && !isCorrectGuess)//a separated IF with two terms if guesses is 5 and NOT false.
                 {
                     Console.WriteLine("Tyvärr du lyckades inte gissa talet på fem försök!");
+                    break;
                 }
+                
 
             }
 
-            Console.WriteLine("Du vann!");
+            
 
             Console.ReadKey();
         }
