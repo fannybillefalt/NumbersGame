@@ -8,11 +8,16 @@ namespace NumbersGame
         {
             Console.WriteLine("Välkommen! Jag tänker på ett nummer. Kan du gissa vilket? Du får fem försök.");
         }
+        public static int GenerateNumber (int value)
+        {
+            Random rnd = new Random(); //Random class with Next method that randomly generates a number between 1-20.
+            int randomNumber = rnd.Next(1, value);
+            return randomNumber;
+        }
 
         static void Main(string[] args)
         {
-            Random random = new Random(); //Random class with Next method that randomly generates a number between 1-20.
-            int randomNumber = random.Next(1, 21);
+            int random = GenerateNumber(21);//To generate only one randomnumber.
             bool isCorrectGuess = false; //Bool generates true or false answer.
             int guesses = 0;
 
@@ -24,11 +29,11 @@ namespace NumbersGame
                 guesses++; //counter
 
                 //if statement with two terms, either IF to high of ELSE IF to low. Then un ELSE if neither of the terms applies.
-                if (guess > randomNumber)
+                if (guess > random)
                 {
                     Console.WriteLine("Tyvärr du gissade för högt!");
                 }
-                else if (guess < randomNumber)
+                else if (guess < random)
                 {
                     Console.WriteLine("Tyvärr du gissade för lågt!");
                 }
