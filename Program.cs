@@ -51,7 +51,7 @@ namespace NumbersGame
         {
             Console.WriteLine("Välkommen! Jag tänker på ett nummer. Kan du gissa vilket? Du får fem försök.");
         }
-        public static int GenerateNumber(int value)
+        public static int GenerateNumber(int value)//A random method for cleaner Main.
         {
             Random rnd = new Random(); //Random class with Next method that randomly generates a number between 1-20.
             int randomNumber = rnd.Next(1, value);
