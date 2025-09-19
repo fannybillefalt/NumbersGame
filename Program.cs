@@ -4,16 +4,6 @@ namespace NumbersGame
 {
     internal class Program
     {
-        public static void WelcomeMessage()//Welcome messages in an own method, using void because no return.
-        {
-            Console.WriteLine("Välkommen! Jag tänker på ett nummer. Kan du gissa vilket? Du får fem försök.");
-        }
-        public static int GenerateNumber (int value)
-        {
-            Random rnd = new Random(); //Random class with Next method that randomly generates a number between 1-20.
-            int randomNumber = rnd.Next(1, value);
-            return randomNumber;
-        }
 
         static void Main(string[] args)
         {
@@ -49,13 +39,23 @@ namespace NumbersGame
                     Console.WriteLine("Tyvärr du lyckades inte gissa talet på fem försök!");
                     break;
                 }
-                
+
 
             }
 
-            
+
 
             Console.ReadKey();
+        }
+        public static void WelcomeMessage()//Welcome messages in an own method, using void because no return.
+        {
+            Console.WriteLine("Välkommen! Jag tänker på ett nummer. Kan du gissa vilket? Du får fem försök.");
+        }
+        public static int GenerateNumber(int value)
+        {
+            Random rnd = new Random(); //Random class with Next method that randomly generates a number between 1-20.
+            int randomNumber = rnd.Next(1, value);
+            return randomNumber;
         }
     }
 }
